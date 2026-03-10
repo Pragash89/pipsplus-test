@@ -1,0 +1,514 @@
+{
+  "common": {
+    "nav": {
+      "home": "Inicio",
+      "education": "Educación",
+      "brokers": "Brokers",
+      "fundRecovery": "Recuperación de Fondos",
+      "subscriptions": "Precios",
+      "about": "Sobre Nosotros",
+      "contact": "Contacto",
+      "login": "Iniciar Sesión",
+      "register": "Comenzar Gratis",
+      "dashboard": "Mi Panel"
+    },
+    "footer": {
+      "tagline": "Tu socio de confianza en educación de trading, evaluación de brokers y recuperación de fondos.",
+      "copyright": "© 2024 PipsPlus. Todos los derechos reservados.",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "links": {
+        "learn": "Aprender",
+        "brokers": "Brokers",
+        "services": "Servicios",
+        "company": "Empresa"
+      }
+    },
+    "cta": {
+      "getStarted": "Comenzar Gratis",
+      "learnMore": "Saber Más",
+      "viewAll": "Ver Todo",
+      "readMore": "Leer Más",
+      "submit": "Enviar",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "continue": "Continuar",
+      "back": "Volver",
+      "next": "Siguiente"
+    },
+    "loading": "Cargando...",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "noResults": "No se encontraron resultados.",
+    "free": "Gratis",
+    "premium": "Premium",
+    "verified": "Verificado",
+    "new": "Nuevo",
+    "popular": "Popular"
+  },
+  "home": {
+    "hero": {
+      "badge": "Confiado por más de 3.720.000 traders en todo el mundo",
+      "headline": "Domina el Trading.",
+      "headlineAccent": "Evalúa Brokers.",
+      "headlineEnd": "Invierte con Confianza.",
+      "subheadline": "De principiante absoluto a trader seguro — cursos gratis, calificaciones verificadas de brokers y soporte experto para recuperar fondos.",
+      "ctaPrimary": "Comenzar a Aprender Gratis",
+      "ctaSecondary": "Ver Reseñas de Brokers",
+      "stat1Value": "3,72M+",
+      "stat1Label": "Traders Activos",
+      "stat2Value": "500+",
+      "stat2Label": "Lecciones Gratis",
+      "stat3Value": "1.200+",
+      "stat3Label": "Brokers Evaluados",
+      "stat4Value": "$47M+",
+      "stat4Label": "Fondos Recuperados"
+    },
+    "features": {
+      "title": "Todo lo que necesitas para operar más inteligente",
+      "subtitle": "Tres pilares poderosos para transformar tu viaje en el trading",
+      "educate": {
+        "title": "Educación de Clase Mundial",
+        "description": "Aprende trading de la A a la Z con cursos interactivos, cuestionarios y certificaciones."
+      },
+      "evaluate": {
+        "title": "Reseñas Verificadas de Brokers",
+        "description": "Compara brokers calificados por traders reales. Verificamos cada reseña."
+      },
+      "recover": {
+        "title": "Soporte de Recuperación de Fondos",
+        "description": "¿Engañado por un broker? Nuestros expertos legales están aquí para ayudarte."
+      },
+      "certificates": {
+        "title": "Certificaciones Físicas",
+        "description": "Obtén certificados reales impresos profesionalmente y enviados a tu puerta."
+      },
+      "community": {
+        "title": "Comunidad Global",
+        "description": "Únete a más de 3,72 millones de traders compartiendo experiencias y análisis."
+      },
+      "protection": {
+        "title": "Protección del Trader",
+        "description": "Bloqueamos brokers fraudulentos y alertamos a nuestra comunidad antes de que causen daño."
+      }
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona PipsPlus",
+      "subtitle": "Tu viaje de principiante a trader seguro en tres pasos simples",
+      "step1": {
+        "title": "Aprende los Fundamentos",
+        "description": "Comienza con cursos gratuitos que cubren conceptos básicos de trading y gestión de riesgos."
+      },
+      "step2": {
+        "title": "Elige un Broker de Confianza",
+        "description": "Usa nuestras calificaciones verificadas para encontrar un broker transparente y regulado."
+      },
+      "step3": {
+        "title": "Opera con Confianza",
+        "description": "Aplica tu conocimiento, sigue tu progreso, gana certificaciones y obtén apoyo cuando lo necesites."
+      }
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros traders",
+      "subtitle": "Experiencias reales de traders reales en nuestra comunidad"
+    },
+    "trust": {
+      "title": "Por qué los traders confían en PipsPlus",
+      "regulated": "100% Independiente",
+      "regulatedDesc": "Ningún broker paga por reseñas",
+      "verified": "Reseñas Verificadas",
+      "verifiedDesc": "Cada reseña de traders reales",
+      "legal": "Soporte Legal",
+      "legalDesc": "Recuperación profesional de fondos",
+      "global": "Alcance Global",
+      "globalDesc": "Traders en más de 150 países"
+    },
+    "cta": {
+      "title": "¿Listo para operar más inteligente?",
+      "subtitle": "Únete a 3,72 millones de traders que confían en PipsPlus.",
+      "button": "Comenzar Gratis Hoy"
+    }
+  },
+  "education": {
+    "title": "Centro de Educación de Trading",
+    "subtitle": "Domina los mercados con cursos estructurados de principiante a trader avanzado",
+    "searchPlaceholder": "Buscar cursos...",
+    "allCategories": "Todas las Categorías",
+    "free": "Cursos Gratis",
+    "premium": "Cursos Premium",
+    "noResults": "No se encontraron cursos.",
+    "enroll": "Inscribirse Ahora",
+    "enrolled": "Continuar Aprendiendo",
+    "preview": "Vista Previa del Curso",
+    "lessons": "lecciones",
+    "duration": "min",
+    "level": "Nivel",
+    "instructor": "Instructor",
+    "certificate": "Certificado Incluido",
+    "categories": {
+      "BASICS": "Fundamentos del Trading",
+      "FOREX": "Trading de Forex",
+      "CRYPTO": "Criptomonedas",
+      "STOCKS": "Mercado de Valores",
+      "RISK_MANAGEMENT": "Gestión de Riesgos",
+      "TECHNICAL_ANALYSIS": "Análisis Técnico",
+      "FUNDAMENTAL_ANALYSIS": "Análisis Fundamental",
+      "PSYCHOLOGY": "Psicología del Trading",
+      "OPTIONS": "Opciones",
+      "COMMODITIES": "Materias Primas"
+    },
+    "levels": {
+      "BEGINNER": "Principiante",
+      "INTERMEDIATE": "Intermedio",
+      "ADVANCED": "Avanzado"
+    },
+    "course": {
+      "whatYouLearn": "Lo que aprenderás",
+      "curriculum": "Plan de Estudios",
+      "requirements": "Requisitos",
+      "startLesson": "Iniciar Lección",
+      "nextLesson": "Siguiente Lección",
+      "prevLesson": "Lección Anterior",
+      "markComplete": "Marcar como Completado",
+      "completed": "Completado",
+      "locked": "Bloqueado — Actualizar a Premium",
+      "progress": "Tu Progreso",
+      "quizTitle": "Verificación de Conocimientos",
+      "submitQuiz": "Enviar Respuestas",
+      "quizPassed": "¡Felicidades! ¡Aprobaste!",
+      "quizFailed": "Sigue aprendiendo e inténtalo de nuevo.",
+      "yourScore": "Tu Puntuación",
+      "passMark": "Puntuación de Aprobación",
+      "retakeQuiz": "Repetir el Quiz"
+    }
+  },
+  "brokers": {
+    "title": "Reseñas y Calificaciones de Brokers",
+    "subtitle": "Encuentra tu broker ideal — calificado por 3,72 millones de traders reales",
+    "searchPlaceholder": "Buscar brokers...",
+    "allRegulations": "Todas las Regulaciones",
+    "allRatings": "Todas las Calificaciones",
+    "sortBy": "Ordenar Por",
+    "sortOptions": {
+      "rating": "Mejor Calificado",
+      "reviews": "Más Reseñas",
+      "name": "Nombre A-Z",
+      "newest": "Más Reciente"
+    },
+    "filters": {
+      "regulation": "Regulación",
+      "minRating": "Calificación Mínima",
+      "instruments": "Instrumentos",
+      "featured": "Solo Destacados",
+      "verified": "Solo Verificados"
+    },
+    "ratings": {
+      "overall": "Calificación General",
+      "trust": "Confianza y Seguridad",
+      "platform": "Plataforma de Trading",
+      "support": "Atención al Cliente",
+      "fees": "Tarifas y Spreads",
+      "withdrawal": "Retiros"
+    },
+    "card": {
+      "regulated": "Regulado",
+      "unregulated": "No Regulado",
+      "blacklisted": "EN LISTA NEGRA",
+      "featured": "Destacado",
+      "verified": "Verificado",
+      "reviews": "reseñas",
+      "viewDetails": "Ver Detalles",
+      "minDeposit": "Depósito Mínimo",
+      "maxLeverage": "Apalancamiento Máximo",
+      "spreadsFrom": "Spreads Desde",
+      "founded": "Fundado"
+    },
+    "detail": {
+      "overview": "Resumen",
+      "ratings": "Calificaciones",
+      "reviews": "Reseñas de Traders",
+      "specs": "Especificaciones",
+      "writeReview": "Escribir Reseña",
+      "loginToReview": "Inicia sesión para escribir una reseña",
+      "noReviews": "Sé el primero en reseñar este broker.",
+      "platforms": "Plataformas",
+      "instruments": "Instrumentos",
+      "withdrawalMethods": "Métodos de Retiro",
+      "headquarters": "Sede",
+      "support": "Atención al Cliente"
+    },
+    "review": {
+      "title": "Título de la Reseña",
+      "content": "Tu Experiencia",
+      "ratingOverall": "Calificación General",
+      "ratingTrust": "Confianza y Seguridad",
+      "ratingPlatform": "Plataforma",
+      "ratingSupport": "Soporte",
+      "ratingFees": "Tarifas",
+      "ratingWithdrawal": "Retiros",
+      "experience": "Años de Experiencia en Trading",
+      "accountType": "Tipo de Cuenta",
+      "submit": "Enviar Reseña",
+      "submitted": "¡Gracias! Tu reseña está pendiente de aprobación.",
+      "guidelines": "Comparte tu experiencia honesta. Las reseñas se verifican antes de publicarse."
+    }
+  },
+  "fundRecovery": {
+    "title": "Servicios de Recuperación de Fondos",
+    "subtitle": "¿Perdiste fondos por un broker deshonesto? Nuestros expertos legales están aquí para ayudar.",
+    "badge": "Soporte Legal Profesional",
+    "howItWorks": {
+      "title": "Cómo Recuperamos tus Fondos",
+      "step1": {
+        "title": "Presenta tu Caso",
+        "description": "Cuéntanos sobre tu situación — qué broker, cuánto perdiste y qué pasó."
+      },
+      "step2": {
+        "title": "Revisión del Caso",
+        "description": "Nuestro equipo legal revisa tu caso, reúne evidencia y evalúa la mejor estrategia."
+      },
+      "step3": {
+        "title": "Acción Legal",
+        "description": "Contactamos al broker directamente, escalamos a reguladores y usamos canales legales."
+      },
+      "step4": {
+        "title": "Recuperación de Fondos",
+        "description": "Trabajamos hasta que tus fondos sean recuperados o se agoten todas las vías legales."
+      }
+    },
+    "form": {
+      "title": "Presenta tu Caso",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "country": "País",
+      "brokerName": "Nombre del Broker",
+      "amountLost": "Cantidad Perdida (USD)",
+      "description": "Describe lo que Sucedió",
+      "descriptionPlaceholder": "Por favor describe tu situación en detalle...",
+      "submit": "Enviar Caso de Recuperación",
+      "submitting": "Enviando...",
+      "success": "Tu caso ha sido enviado. Nuestro equipo te contactará en 24-48 horas.",
+      "disclaimer": "Toda la información se mantiene estrictamente confidencial."
+    },
+    "stats": {
+      "recovered": "Total de Fondos Recuperados",
+      "cases": "Casos Exitosos",
+      "rate": "Tasa de Éxito",
+      "time": "Tiempo Promedio de Recuperación"
+    }
+  },
+  "subscriptions": {
+    "title": "Elige tu Camino de Aprendizaje",
+    "subtitle": "Comienza gratis. Actualiza cuando estés listo para cursos avanzados y certificaciones.",
+    "monthly": "Mensual",
+    "annual": "Anual",
+    "savePercent": "Ahorra 40%",
+    "free": {
+      "name": "Gratis",
+      "price": "$0",
+      "period": "para siempre",
+      "description": "Perfecto para principiantes que inician su viaje en el trading.",
+      "cta": "Comenzar Gratis",
+      "features": [
+        "Acceso a todos los cursos básicos",
+        "Fundamentos del trading",
+        "Básicos de forex y acciones",
+        "Acceso a la comunidad",
+        "Acceso a reseñas de brokers",
+        "Consulta de recuperación de fondos"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$29",
+      "priceAnnual": "$17",
+      "period": "por mes",
+      "description": "Para traders serios que quieren educación completa y certificación.",
+      "cta": "Iniciar Prueba Premium",
+      "badge": "Más Popular",
+      "features": [
+        "Todo en Gratis",
+        "Estrategias de trading avanzadas",
+        "Análisis técnico y fundamental",
+        "Dominio de psicología del trading",
+        "Opciones y derivados",
+        "Cuestionarios interactivos",
+        "Entrega de certificado físico",
+        "Soporte prioritario de recuperación",
+        "Sesiones de coaching 1-a-1",
+        "Informes de análisis de mercado"
+      ]
+    },
+    "certificate": {
+      "title": "Certificados Físicos Reales",
+      "description": "Completa un curso y gana un certificado impreso profesionalmente y enviado a tu puerta.",
+      "includes": "El certificado incluye:",
+      "feature1": "Impreso en papel de alta calidad",
+      "feature2": "Código de verificación único",
+      "feature3": "Envío internacional con seguimiento",
+      "feature4": "Reconocido por instituciones de trading",
+      "feature5": "Copia digital también proporcionada"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Puedo cancelar en cualquier momento?",
+      "a1": "Sí, puedes cancelar tu suscripción en cualquier momento.",
+      "q2": "¿Cómo obtengo mi certificado físico?",
+      "a2": "Después de completar un curso, se te pedirá que ingreses tu dirección de envío.",
+      "q3": "¿Hay una prueba gratuita?",
+      "a3": "Todos los cursos básicos son permanentemente gratuitos. Premium tiene 7 días de prueba.",
+      "q4": "¿En qué idiomas están disponibles los cursos?",
+      "a4": "Inglés, árabe, español y francés.",
+      "q5": "¿Puedo cambiar de plan?",
+      "a5": "Sí, puedes actualizar o degradar en cualquier momento."
+    }
+  },
+  "about": {
+    "title": "Sobre PipsPlus",
+    "subtitle": "Empoderando a traders en todo el mundo con conocimiento, confianza y protección desde 2018.",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "PipsPlus fue fundado con una misión simple pero poderosa: proteger a los traders de brokers fraudulentos y empoderarlos con educación de clase mundial."
+    },
+    "stats": {
+      "traders": "Traders Activos",
+      "brokers": "Brokers Evaluados",
+      "courses": "Cursos Disponibles",
+      "countries": "Países Atendidos"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "transparency": {
+        "title": "Transparencia",
+        "description": "Ningún broker nos paga por reseñas. Cada evaluación es independiente."
+      },
+      "education": {
+        "title": "Educación Primero",
+        "description": "Creemos que un trader educado es un trader protegido. Por eso los básicos son siempre gratuitos."
+      },
+      "protection": {
+        "title": "Protección del Trader",
+        "description": "Desde bloquear brokers fraudulentos hasta recuperar fondos perdidos, ponemos a los traders primero."
+      },
+      "community": {
+        "title": "Comunidad Global",
+        "description": "Nuestra comunidad de 3,72 millones de traders se ayuda mutuamente con experiencias reales."
+      }
+    },
+    "team": {
+      "title": "Equipo de Liderazgo"
+    }
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Tienes alguna pregunta o necesitas soporte? Nuestro equipo está aquí para ayudar.",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono (opcional)",
+      "subject": "Asunto",
+      "message": "Tu Mensaje",
+      "messagePlaceholder": "¿Cómo podemos ayudarte?",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "success": "¡Tu mensaje ha sido enviado! Responderemos en 24 horas.",
+      "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    },
+    "info": {
+      "email": "support@pipsplus.com",
+      "responseTime": "Respuesta en 24 horas",
+      "office": "Disponible Lun-Vie, 9AM-6PM GMT"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenido de Vuelta",
+      "subtitle": "Inicia sesión en tu cuenta de PipsPlus",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar Sesión",
+      "submitting": "Iniciando sesión...",
+      "noAccount": "¿No tienes una cuenta?",
+      "register": "Regístrate gratis",
+      "orContinueWith": "O continúa con",
+      "google": "Continuar con Google",
+      "error": "Correo electrónico o contraseña inválidos."
+    },
+    "register": {
+      "title": "Crea tu Cuenta",
+      "subtitle": "Únete a más de 3,72 millones de traders en PipsPlus",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "country": "País (opcional)",
+      "agreeTerms": "Acepto los Términos de Servicio y la Política de Privacidad",
+      "submit": "Crear Cuenta",
+      "submitting": "Creando cuenta...",
+      "hasAccount": "¿Ya tienes una cuenta?",
+      "login": "Iniciar sesión",
+      "orContinueWith": "O regístrate con",
+      "google": "Continuar con Google",
+      "success": "¡Cuenta creada con éxito! Bienvenido a PipsPlus."
+    }
+  },
+  "dashboard": {
+    "welcome": "¡Bienvenido de vuelta, {name}!",
+    "overview": "Resumen",
+    "myCourses": "Mis Cursos",
+    "certificates": "Certificados",
+    "savedBrokers": "Brokers Guardados",
+    "settings": "Configuración",
+    "stats": {
+      "enrolled": "Cursos Inscritos",
+      "completed": "Cursos Completados",
+      "certificates": "Certificados Obtenidos",
+      "savedBrokers": "Brokers Guardados"
+    },
+    "courses": {
+      "title": "Mis Cursos",
+      "noCourses": "Aún no te has inscrito en ningún curso.",
+      "browseCourses": "Explorar Cursos",
+      "progress": "Progreso",
+      "continue": "Continuar",
+      "completed": "Completado",
+      "started": "Iniciado"
+    },
+    "certificates": {
+      "title": "Mis Certificados",
+      "noCertificates": "Completa un curso para ganar tu primer certificado.",
+      "download": "Descargar PDF",
+      "requestShipping": "Solicitar Copia Física",
+      "status": {
+        "ISSUED": "Emitido",
+        "PRINTING": "En Impresión",
+        "SHIPPED": "Enviado",
+        "DELIVERED": "Entregado"
+      },
+      "shippingForm": {
+        "title": "Solicitar Certificado Físico",
+        "street": "Dirección",
+        "city": "Ciudad",
+        "country": "País",
+        "postalCode": "Código Postal",
+        "submit": "Solicitar Envío"
+      }
+    },
+    "settings": {
+      "profile": "Perfil",
+      "security": "Seguridad",
+      "notifications": "Notificaciones",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "bio": "Biografía",
+      "country": "País",
+      "phone": "Número de Teléfono",
+      "currentPassword": "Contraseña Actual",
+      "newPassword": "Nueva Contraseña",
+      "confirmPassword": "Confirmar Nueva Contraseña",
+      "saveChanges": "Guardar Cambios",
+      "saved": "¡Cambios guardados con éxito!"
+    }
+  }
+}
