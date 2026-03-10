@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 export { proxy as middleware } from "./src/proxy";
 
 export const config = {
