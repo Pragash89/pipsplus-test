@@ -36,14 +36,6 @@ function checkRateLimit(key: string, max: number): boolean {
   return true;
 }
 
-// Clean up old entries periodically (avoid memory leaks)
-setInterval(() => {
-  const now = Date.now();
-  for (const [key, value] of rateLimitMap.entries()) {
-    if (now > value.resetAt) rateLimitMap.delete(key);
-  }
-}, 5 * 60_000);
-
 function isProtectedPath(pathname: string): boolean {
   return protectedPaths.some((path) => {
     const withoutLocale = pathname.replace(/^\/(en|ar|es|fr)/, "");
