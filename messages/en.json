@@ -307,44 +307,55 @@
   },
   "subscriptions": {
     "title": "Choose Your Learning Path",
-    "subtitle": "Start free. Upgrade when you're ready for advanced courses and certification.",
+    "subtitle": "Start free. Upgrade when you're ready for advanced modules and certification.",
     "monthly": "Monthly",
     "annual": "Annual",
     "savePercent": "Save 40%",
-    "free": {
-      "name": "Free",
+    "explorer": {
+      "name": "Explorer",
       "price": "$0",
       "period": "forever",
       "description": "Perfect for beginners starting their trading journey.",
       "cta": "Get Started Free",
       "features": [
-        "Access to all basic courses",
-        "Trading fundamentals",
-        "Forex & stock basics",
+        "Modules 1–4 of the Beginner Course",
+        "Trading fundamentals & forex basics",
+        "Interactive quizzes",
         "Community access",
         "Broker review access",
         "Fund recovery consultation"
       ]
     },
-    "premium": {
-      "name": "Premium",
-      "price": "$29",
-      "priceAnnual": "$17",
+    "trader": {
+      "name": "Trader",
+      "price": "$59",
       "period": "per month",
-      "description": "For serious traders who want the complete education and certification.",
-      "cta": "Start Premium Trial",
+      "description": "For developing traders ready to go deeper into strategy.",
+      "cta": "Start Trader Plan",
+      "features": [
+        "Everything in Explorer",
+        "Modules 5–8 of the Beginner Course",
+        "Technical & fundamental analysis",
+        "Risk management mastery",
+        "Advanced quizzes & exercises",
+        "Priority fund recovery support"
+      ]
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "$119",
+      "period": "per month",
+      "description": "Full access — everything PipsPlus has to offer.",
+      "cta": "Go Professional",
       "badge": "Most Popular",
       "features": [
-        "Everything in Free",
-        "Advanced trading strategies",
-        "Technical & fundamental analysis",
-        "Trading psychology mastery",
-        "Options & derivatives",
-        "Interactive quizzes",
-        "Physical certificate delivery",
-        "Priority fund recovery support",
+        "Everything in Trader",
+        "Modules 9–12 of the Beginner Course",
+        "Live trading psychology sessions",
         "1-on-1 coaching sessions",
-        "Market analysis reports"
+        "Physical certificate delivery",
+        "Market analysis reports",
+        "Exclusive professional community"
       ]
     },
     "certificate": {

@@ -16,8 +16,9 @@ enum Role {
 }
 
 enum SubscriptionTier {
-  FREE
-  PREMIUM
+  EXPLORER // Free plan — access to modules 1–4
+  TRADER // $59/month — access to modules 5–8
+  PROFESSIONAL // $119/month — full access, all modules
 }
 
 enum CourseLevel {
@@ -99,7 +100,7 @@ model User {
   phone              String?
   preferredLocale    SiteLocale       @default(en)
   role               Role             @default(TRADER)
-  subscription       SubscriptionTier @default(FREE)
+  subscription       SubscriptionTier @default(EXPLORER)
   subscriptionEndsAt DateTime?
   isVerifiedTrader   Boolean          @default(false)
   createdAt          DateTime         @default(now())
@@ -195,14 +196,15 @@ model Course {
 }
 
 model Module {
-  id        String   @id @default(cuid())
-  courseId  String
-  title     String
-  titleAr   String?
-  titleEs   String?
-  titleFr   String?
-  sortOrder Int      @default(0)
-  createdAt DateTime @default(now())
+  id         String           @id @default(cuid())
+  courseId   String
+  title      String
+  titleAr    String?
+  titleEs    String?
+  titleFr    String?
+  planAccess SubscriptionTier @default(EXPLORER)
+  sortOrder  Int              @default(0)
+  createdAt  DateTime         @default(now())
 
   course  Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
   lessons Lesson[]

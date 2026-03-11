@@ -128,8 +128,9 @@ export type Role = (typeof Role)[keyof typeof Role]
 
 
 export const SubscriptionTier: {
-  FREE: 'FREE',
-  PREMIUM: 'PREMIUM'
+  EXPLORER: 'EXPLORER',
+  TRADER: 'TRADER',
+  PROFESSIONAL: 'PROFESSIONAL'
 };
 
 export type SubscriptionTier = (typeof SubscriptionTier)[keyof typeof SubscriptionTier]
@@ -9136,6 +9137,7 @@ export namespace Prisma {
     titleAr: string | null
     titleEs: string | null
     titleFr: string | null
+    planAccess: $Enums.SubscriptionTier | null
     sortOrder: number | null
     createdAt: Date | null
   }
@@ -9147,6 +9149,7 @@ export namespace Prisma {
     titleAr: string | null
     titleEs: string | null
     titleFr: string | null
+    planAccess: $Enums.SubscriptionTier | null
     sortOrder: number | null
     createdAt: Date | null
   }
@@ -9158,6 +9161,7 @@ export namespace Prisma {
     titleAr: number
     titleEs: number
     titleFr: number
+    planAccess: number
     sortOrder: number
     createdAt: number
     _all: number
@@ -9179,6 +9183,7 @@ export namespace Prisma {
     titleAr?: true
     titleEs?: true
     titleFr?: true
+    planAccess?: true
     sortOrder?: true
     createdAt?: true
   }
@@ -9190,6 +9195,7 @@ export namespace Prisma {
     titleAr?: true
     titleEs?: true
     titleFr?: true
+    planAccess?: true
     sortOrder?: true
     createdAt?: true
   }
@@ -9201,6 +9207,7 @@ export namespace Prisma {
     titleAr?: true
     titleEs?: true
     titleFr?: true
+    planAccess?: true
     sortOrder?: true
     createdAt?: true
     _all?: true
@@ -9299,6 +9306,7 @@ export namespace Prisma {
     titleAr: string | null
     titleEs: string | null
     titleFr: string | null
+    planAccess: $Enums.SubscriptionTier
     sortOrder: number
     createdAt: Date
     _count: ModuleCountAggregateOutputType | null
@@ -9329,6 +9337,7 @@ export namespace Prisma {
     titleAr?: boolean
     titleEs?: boolean
     titleFr?: boolean
+    planAccess?: boolean
     sortOrder?: boolean
     createdAt?: boolean
     course?: boolean | CourseDefaultArgs<ExtArgs>
@@ -9343,6 +9352,7 @@ export namespace Prisma {
     titleAr?: boolean
     titleEs?: boolean
     titleFr?: boolean
+    planAccess?: boolean
     sortOrder?: boolean
     createdAt?: boolean
     course?: boolean | CourseDefaultArgs<ExtArgs>
@@ -9355,6 +9365,7 @@ export namespace Prisma {
     titleAr?: boolean
     titleEs?: boolean
     titleFr?: boolean
+    planAccess?: boolean
     sortOrder?: boolean
     createdAt?: boolean
     course?: boolean | CourseDefaultArgs<ExtArgs>
@@ -9367,11 +9378,12 @@ export namespace Prisma {
     titleAr?: boolean
     titleEs?: boolean
     titleFr?: boolean
+    planAccess?: boolean
     sortOrder?: boolean
     createdAt?: boolean
   }
 
-  export type ModuleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "courseId" | "title" | "titleAr" | "titleEs" | "titleFr" | "sortOrder" | "createdAt", ExtArgs["result"]["module"]>
+  export type ModuleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "courseId" | "title" | "titleAr" | "titleEs" | "titleFr" | "planAccess" | "sortOrder" | "createdAt", ExtArgs["result"]["module"]>
   export type ModuleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     course?: boolean | CourseDefaultArgs<ExtArgs>
     lessons?: boolean | Module$lessonsArgs<ExtArgs>
@@ -9397,6 +9409,7 @@ export namespace Prisma {
       titleAr: string | null
       titleEs: string | null
       titleFr: string | null
+      planAccess: $Enums.SubscriptionTier
       sortOrder: number
       createdAt: Date
     }, ExtArgs["result"]["module"]>
@@ -9830,6 +9843,7 @@ export namespace Prisma {
     readonly titleAr: FieldRef<"Module", 'String'>
     readonly titleEs: FieldRef<"Module", 'String'>
     readonly titleFr: FieldRef<"Module", 'String'>
+    readonly planAccess: FieldRef<"Module", 'SubscriptionTier'>
     readonly sortOrder: FieldRef<"Module", 'Int'>
     readonly createdAt: FieldRef<"Module", 'DateTime'>
   }
@@ -26674,6 +26688,7 @@ export namespace Prisma {
     titleAr: 'titleAr',
     titleEs: 'titleEs',
     titleFr: 'titleFr',
+    planAccess: 'planAccess',
     sortOrder: 'sortOrder',
     createdAt: 'createdAt'
   };
@@ -27705,6 +27720,7 @@ export namespace Prisma {
     titleAr?: StringNullableFilter<"Module"> | string | null
     titleEs?: StringNullableFilter<"Module"> | string | null
     titleFr?: StringNullableFilter<"Module"> | string | null
+    planAccess?: EnumSubscriptionTierFilter<"Module"> | $Enums.SubscriptionTier
     sortOrder?: IntFilter<"Module"> | number
     createdAt?: DateTimeFilter<"Module"> | Date | string
     course?: XOR<CourseScalarRelationFilter, CourseWhereInput>
@@ -27718,6 +27734,7 @@ export namespace Prisma {
     titleAr?: SortOrderInput | SortOrder
     titleEs?: SortOrderInput | SortOrder
     titleFr?: SortOrderInput | SortOrder
+    planAccess?: SortOrder
     sortOrder?: SortOrder
     createdAt?: SortOrder
     course?: CourseOrderByWithRelationInput
@@ -27734,6 +27751,7 @@ export namespace Prisma {
     titleAr?: StringNullableFilter<"Module"> | string | null
     titleEs?: StringNullableFilter<"Module"> | string | null
     titleFr?: StringNullableFilter<"Module"> | string | null
+    planAccess?: EnumSubscriptionTierFilter<"Module"> | $Enums.SubscriptionTier
     sortOrder?: IntFilter<"Module"> | number
     createdAt?: DateTimeFilter<"Module"> | Date | string
     course?: XOR<CourseScalarRelationFilter, CourseWhereInput>
@@ -27747,6 +27765,7 @@ export namespace Prisma {
     titleAr?: SortOrderInput | SortOrder
     titleEs?: SortOrderInput | SortOrder
     titleFr?: SortOrderInput | SortOrder
+    planAccess?: SortOrder
     sortOrder?: SortOrder
     createdAt?: SortOrder
     _count?: ModuleCountOrderByAggregateInput
@@ -27766,6 +27785,7 @@ export namespace Prisma {
     titleAr?: StringNullableWithAggregatesFilter<"Module"> | string | null
     titleEs?: StringNullableWithAggregatesFilter<"Module"> | string | null
     titleFr?: StringNullableWithAggregatesFilter<"Module"> | string | null
+    planAccess?: EnumSubscriptionTierWithAggregatesFilter<"Module"> | $Enums.SubscriptionTier
     sortOrder?: IntWithAggregatesFilter<"Module"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Module"> | Date | string
   }
@@ -29596,6 +29616,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
     course: CourseCreateNestedOneWithoutModulesInput
@@ -29609,6 +29630,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
     lessons?: LessonUncheckedCreateNestedManyWithoutModuleInput
@@ -29620,6 +29642,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     course?: CourseUpdateOneRequiredWithoutModulesNestedInput
@@ -29633,6 +29656,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lessons?: LessonUncheckedUpdateManyWithoutModuleNestedInput
@@ -29645,6 +29669,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
   }
@@ -29655,6 +29680,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -29666,6 +29692,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -31721,6 +31748,7 @@ export namespace Prisma {
     titleAr?: SortOrder
     titleEs?: SortOrder
     titleFr?: SortOrder
+    planAccess?: SortOrder
     sortOrder?: SortOrder
     createdAt?: SortOrder
   }
@@ -31736,6 +31764,7 @@ export namespace Prisma {
     titleAr?: SortOrder
     titleEs?: SortOrder
     titleFr?: SortOrder
+    planAccess?: SortOrder
     sortOrder?: SortOrder
     createdAt?: SortOrder
   }
@@ -31747,6 +31776,7 @@ export namespace Prisma {
     titleAr?: SortOrder
     titleEs?: SortOrder
     titleFr?: SortOrder
+    planAccess?: SortOrder
     sortOrder?: SortOrder
     createdAt?: SortOrder
   }
@@ -35236,6 +35266,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
     lessons?: LessonCreateNestedManyWithoutModuleInput
@@ -35247,6 +35278,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
     lessons?: LessonUncheckedCreateNestedManyWithoutModuleInput
@@ -35348,6 +35380,7 @@ export namespace Prisma {
     titleAr?: StringNullableFilter<"Module"> | string | null
     titleEs?: StringNullableFilter<"Module"> | string | null
     titleFr?: StringNullableFilter<"Module"> | string | null
+    planAccess?: EnumSubscriptionTierFilter<"Module"> | $Enums.SubscriptionTier
     sortOrder?: IntFilter<"Module"> | number
     createdAt?: DateTimeFilter<"Module"> | Date | string
   }
@@ -35614,6 +35647,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
     course: CourseCreateNestedOneWithoutModulesInput
@@ -35626,6 +35660,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
   }
@@ -35695,6 +35730,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     course?: CourseUpdateOneRequiredWithoutModulesNestedInput
@@ -35707,6 +35743,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -38168,6 +38205,7 @@ export namespace Prisma {
     titleAr?: string | null
     titleEs?: string | null
     titleFr?: string | null
+    planAccess?: $Enums.SubscriptionTier
     sortOrder?: number
     createdAt?: Date | string
   }
@@ -38198,6 +38236,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lessons?: LessonUpdateManyWithoutModuleNestedInput
@@ -38209,6 +38248,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lessons?: LessonUncheckedUpdateManyWithoutModuleNestedInput
@@ -38220,6 +38260,7 @@ export namespace Prisma {
     titleAr?: NullableStringFieldUpdateOperationsInput | string | null
     titleEs?: NullableStringFieldUpdateOperationsInput | string | null
     titleFr?: NullableStringFieldUpdateOperationsInput | string | null
+    planAccess?: EnumSubscriptionTierFieldUpdateOperationsInput | $Enums.SubscriptionTier
     sortOrder?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

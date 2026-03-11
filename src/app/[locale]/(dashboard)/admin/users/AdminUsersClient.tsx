@@ -180,9 +180,11 @@ export default function AdminUsersClient({ users, total, currentPage, pageSize, 
                   <td className="px-5 py-3.5">
                     <span className={cn(
                       "px-2.5 py-1 rounded-full text-xs font-bold",
-                      user.subscription === "PREMIUM" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-600"
+                      user.subscription === "PROFESSIONAL" ? "bg-purple-100 text-purple-700" :
+                      user.subscription === "TRADER" ? "bg-amber-100 text-amber-700" :
+                      "bg-gray-100 text-gray-600"
                     )}>
-                      {user.subscription === "PREMIUM" ? "PRO" : "FREE"}
+                      {user.subscription === "PROFESSIONAL" ? "PRO" : user.subscription === "TRADER" ? "TRADER" : "EXPLORER"}
                     </span>
                   </td>
                   <td className="px-5 py-3.5 hidden md:table-cell">

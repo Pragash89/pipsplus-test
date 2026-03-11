@@ -10,8 +10,9 @@ export default async function SubscriptionsPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "subscriptions" });
 
-  const freeFeatures = t.raw("free.features") as string[];
-  const premiumFeatures = t.raw("premium.features") as string[];
+  const explorerFeatures = t.raw("explorer.features") as string[];
+  const traderFeatures = t.raw("trader.features") as string[];
+  const professionalFeatures = t.raw("professional.features") as string[];
 
   const faqs = [
     { q: t("faq.q1"), a: t("faq.a1") },
@@ -52,18 +53,21 @@ export default async function SubscriptionsPage({
 
       {/* Pricing Cards */}
       <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Free Plan */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Explorer Plan */}
             <div className="relative bg-white rounded-3xl border-2 border-gray-200 p-8 shadow-sm hover:shadow-md transition-all">
               <div className="mb-8">
+                <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+                  <Zap size={20} className="text-emerald-600" />
+                </div>
                 <h2 className="text-2xl font-black text-[#111827] mb-1">
-                  {t("free.name")}
+                  {t("explorer.name")}
                 </h2>
-                <p className="text-[#6B7280] text-sm mb-6">{t("free.description")}</p>
+                <p className="text-[#6B7280] text-sm mb-6">{t("explorer.description")}</p>
                 <div className="flex items-end gap-2">
-                  <span className="text-5xl font-black text-[#111827]">{t("free.price")}</span>
-                  <span className="text-[#6B7280] mb-2">{t("free.period")}</span>
+                  <span className="text-5xl font-black text-[#111827]">{t("explorer.price")}</span>
+                  <span className="text-[#6B7280] mb-2">{t("explorer.period")}</span>
                 </div>
               </div>
 
@@ -71,14 +75,14 @@ export default async function SubscriptionsPage({
                 href={`/${locale}/register`}
                 className="block w-full text-center py-3 px-6 border-2 border-[#1E40AF] text-[#1E40AF] font-bold rounded-xl hover:bg-[#EFF6FF] transition-all mb-8"
               >
-                {t("free.cta")}
+                {t("explorer.cta")}
               </Link>
 
               <ul className="space-y-3">
-                {freeFeatures.map((feature) => (
+                {explorerFeatures.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                      <Check size={12} className="text-[#6B7280]" />
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                      <Check size={12} className="text-emerald-600" />
                     </div>
                     <span className="text-[#374151] text-sm">{feature}</span>
                   </li>
@@ -86,24 +90,62 @@ export default async function SubscriptionsPage({
               </ul>
             </div>
 
-            {/* Premium Plan */}
+            {/* Trader Plan */}
+            <div className="relative bg-white rounded-3xl border-2 border-[#1E40AF]/30 p-8 shadow-md hover:shadow-lg transition-all">
+              <div className="mb-8">
+                <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                  <Star size={20} className="text-[#1E40AF]" />
+                </div>
+                <h2 className="text-2xl font-black text-[#111827] mb-1">
+                  {t("trader.name")}
+                </h2>
+                <p className="text-[#6B7280] text-sm mb-6">{t("trader.description")}</p>
+                <div className="flex items-end gap-2">
+                  <span className="text-5xl font-black text-[#111827]">{t("trader.price")}</span>
+                  <span className="text-[#6B7280] mb-2">{t("trader.period")}</span>
+                </div>
+              </div>
+
+              <Link
+                href={`/${locale}/register`}
+                className="block w-full text-center py-3 px-6 bg-[#1E40AF] text-white font-bold rounded-xl hover:bg-[#1E3A8A] transition-all mb-8 shadow-md"
+              >
+                {t("trader.cta")}
+              </Link>
+
+              <ul className="space-y-3">
+                {traderFeatures.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <Check size={12} className="text-[#1E40AF]" />
+                    </div>
+                    <span className="text-[#374151] text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Professional Plan */}
             <div className="relative bg-gradient-to-br from-[#1E40AF] to-[#3B82F6] rounded-3xl p-8 shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/40 transition-all">
               {/* Badge */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <span className="inline-flex items-center gap-1.5 bg-[#F59E0B] text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   <Star size={12} fill="currentColor" />
-                  {t("premium.badge")}
+                  {t("professional.badge")}
                 </span>
               </div>
 
               <div className="mb-8">
+                <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                  <Award size={20} className="text-white" />
+                </div>
                 <h2 className="text-2xl font-black text-white mb-1">
-                  {t("premium.name")}
+                  {t("professional.name")}
                 </h2>
-                <p className="text-blue-200 text-sm mb-6">{t("premium.description")}</p>
+                <p className="text-blue-200 text-sm mb-6">{t("professional.description")}</p>
                 <div className="flex items-end gap-2">
-                  <span className="text-5xl font-black text-white">{t("premium.price")}</span>
-                  <span className="text-blue-200 mb-2">{t("premium.period")}</span>
+                  <span className="text-5xl font-black text-white">{t("professional.price")}</span>
+                  <span className="text-blue-200 mb-2">{t("professional.period")}</span>
                 </div>
               </div>
 
@@ -111,11 +153,11 @@ export default async function SubscriptionsPage({
                 href={`/${locale}/register`}
                 className="block w-full text-center py-3 px-6 bg-white text-[#1E40AF] font-bold rounded-xl hover:bg-blue-50 transition-all mb-8 shadow-md"
               >
-                {t("premium.cta")}
+                {t("professional.cta")}
               </Link>
 
               <ul className="space-y-3">
-                {premiumFeatures.map((feature) => (
+                {professionalFeatures.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                       <Check size={12} className="text-white" />
@@ -135,7 +177,7 @@ export default async function SubscriptionsPage({
           <div>
             <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 rounded-full px-4 py-2 text-sm font-semibold mb-6">
               <Award size={16} />
-              Premium Feature
+              Professional Feature
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-[#111827] mb-4">
               {t("certificate.title")}
@@ -170,7 +212,7 @@ export default async function SubscriptionsPage({
               <p className="text-[#6B7280] text-sm mb-1">This certifies that</p>
               <p className="text-xl font-bold text-[#111827] mb-1">John Smith</p>
               <p className="text-[#6B7280] text-sm mb-4">has successfully completed</p>
-              <p className="text-lg font-bold text-[#1E40AF] mb-6">Advanced Forex Trading Mastery</p>
+              <p className="text-lg font-bold text-[#1E40AF] mb-6">Beginner Trader Foundation</p>
               <div className="flex justify-between items-end">
                 <div className="text-left">
                   <p className="text-xs text-gray-400">Date Issued</p>

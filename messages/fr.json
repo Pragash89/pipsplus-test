@@ -303,40 +303,51 @@
     "monthly": "Mensuel",
     "annual": "Annuel",
     "savePercent": "Économisez 40%",
-    "free": {
-      "name": "Gratuit",
+    "explorer": {
+      "name": "Explorer",
       "price": "0$",
       "period": "pour toujours",
       "description": "Parfait pour les débutants qui commencent leur parcours de trading.",
       "cta": "Commencer Gratuitement",
       "features": [
-        "Accès à tous les cours de base",
-        "Fondamentaux du trading",
-        "Bases du forex et des actions",
+        "Modules 1–4 du Cours pour Débutants",
+        "Fondamentaux du trading et forex",
+        "Quiz interactifs",
         "Accès à la communauté",
-        "Accès aux avis de courtiers",
+        "Avis de courtiers",
         "Consultation de récupération de fonds"
       ]
     },
-    "premium": {
-      "name": "Premium",
-      "price": "29$",
-      "priceAnnual": "17$",
+    "trader": {
+      "name": "Trader",
+      "price": "59$",
       "period": "par mois",
-      "description": "Pour les traders sérieux qui veulent une éducation complète et une certification.",
-      "cta": "Démarrer l'Essai Premium",
+      "description": "Pour les traders en développement prêts à approfondir la stratégie.",
+      "cta": "Démarrer le Plan Trader",
+      "features": [
+        "Tout dans Explorer",
+        "Modules 5–8 du Cours pour Débutants",
+        "Analyse technique et fondamentale",
+        "Maîtrise de la gestion des risques",
+        "Exercices et quiz avancés",
+        "Support prioritaire de récupération"
+      ]
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "119$",
+      "period": "par mois",
+      "description": "Accès complet — tout ce que PipsPlus offre.",
+      "cta": "Passer à Professional",
       "badge": "Le Plus Populaire",
       "features": [
-        "Tout dans Gratuit",
-        "Stratégies de trading avancées",
-        "Analyse technique et fondamentale",
-        "Maîtrise de la psychologie du trading",
-        "Options et dérivés",
-        "Quiz interactifs",
-        "Livraison de certificat physique",
-        "Support prioritaire de récupération",
+        "Tout dans Trader",
+        "Modules 9–12 du Cours pour Débutants",
+        "Sessions de psychologie du trading",
         "Sessions de coaching 1-à-1",
-        "Rapports d'analyse de marché"
+        "Livraison de certificat physique",
+        "Rapports d'analyse de marché",
+        "Communauté professionnelle exclusive"
       ]
     },
     "certificate": {

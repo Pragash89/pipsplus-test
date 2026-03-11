@@ -7,7 +7,7 @@ import { z } from "zod";
 const patchSchema = z.object({
   userId: z.string().cuid(),
   role: z.enum(["TRADER", "INSTRUCTOR", "ADMIN"]).optional(),
-  subscription: z.enum(["FREE", "PREMIUM"]).optional(),
+  subscription: z.enum(["EXPLORER", "TRADER", "PROFESSIONAL"]).optional(),
 });
 
 async function requireAdmin() {

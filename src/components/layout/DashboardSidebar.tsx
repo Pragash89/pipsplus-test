@@ -72,7 +72,7 @@ function SidebarContent({ locale, pathname, session, onNavClick }: SidebarConten
   const userName = session?.user?.name ?? "Trader";
   const userEmail = session?.user?.email ?? "";
   const userImage = session?.user?.image;
-  const isPremium = (session?.user as any)?.subscription === "PREMIUM";
+  const isPremium = ["TRADER", "PROFESSIONAL"].includes((session?.user as any)?.subscription);
 
   const navItems = isAdminSection && isAdmin ? ADMIN_NAV : USER_NAV;
 

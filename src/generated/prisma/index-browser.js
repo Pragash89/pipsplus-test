@@ -203,6 +203,7 @@ exports.Prisma.ModuleScalarFieldEnum = {
   titleAr: 'titleAr',
   titleEs: 'titleEs',
   titleFr: 'titleFr',
+  planAccess: 'planAccess',
   sortOrder: 'sortOrder',
   createdAt: 'createdAt'
 };
@@ -447,8 +448,9 @@ exports.Role = exports.$Enums.Role = {
 };
 
 exports.SubscriptionTier = exports.$Enums.SubscriptionTier = {
-  FREE: 'FREE',
-  PREMIUM: 'PREMIUM'
+  EXPLORER: 'EXPLORER',
+  TRADER: 'TRADER',
+  PROFESSIONAL: 'PROFESSIONAL'
 };
 
 exports.CourseCategory = exports.$Enums.CourseCategory = {

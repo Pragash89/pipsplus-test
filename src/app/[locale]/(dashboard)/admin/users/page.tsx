@@ -23,7 +23,7 @@ export default async function AdminUsersPage({
   const pageSize = 20;
 
   const where: Record<string, unknown> = {};
-  if (filter === "premium") where.subscription = "PREMIUM";
+  if (filter === "premium") where.subscription = { in: ["TRADER", "PROFESSIONAL"] };
   if (filter === "admin") where.role = "ADMIN";
   if (search) {
     where.OR = [

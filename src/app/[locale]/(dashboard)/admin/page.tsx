@@ -46,8 +46,8 @@ async function getAdminStats() {
     prisma.fundRecoveryCase.count({ where: { status: { in: ["SUBMITTED", "UNDER_REVIEW", "IN_PROGRESS"] } } }),
     prisma.fundRecoveryCase.count({ where: { status: "RESOLVED" } }),
     prisma.contactSubmission.count({ where: { isRead: false } }),
-    prisma.user.count({ where: { subscription: "PREMIUM" } }),
-    prisma.user.count({ where: { subscription: "FREE" } }),
+    prisma.user.count({ where: { subscription: { not: "EXPLORER" } } }),
+    prisma.user.count({ where: { subscription: "EXPLORER" } }),
     prisma.certificate.count(),
     prisma.lessonProgress.count(),
   ]);
@@ -307,10 +307,12 @@ export default async function AdminPage({ params }: { params: Promise<{ locale: 
                   <p className="text-xs text-gray-400 truncate">{user.country ?? user.email}</p>
                 </div>
                 <div className="flex items-center gap-1.5 flex-shrink-0">
-                  {user.subscription === "PREMIUM" ? (
-                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Premium</span>
+                  {user.subscription === "PROFESSIONAL" ? (
+                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Pro</span>
+                  ) : user.subscription === "TRADER" ? (
+                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Trader</span>
                   ) : (
-                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">Free</span>
+                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">Explorer</span>
                   )}
                   {user.role === "ADMIN" && (
                     <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Admin</span>

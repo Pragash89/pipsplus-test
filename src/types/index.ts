@@ -1,7 +1,7 @@
 export type Locale = "en" | "ar" | "es" | "fr";
 
 export type Role = "TRADER" | "INSTRUCTOR" | "ADMIN";
-export type SubscriptionTier = "FREE" | "PREMIUM";
+export type SubscriptionTier = "EXPLORER" | "TRADER" | "PROFESSIONAL";
 export type CourseLevel = "BEGINNER" | "INTERMEDIATE" | "ADVANCED";
 export type CourseCategory =
   | "BASICS"

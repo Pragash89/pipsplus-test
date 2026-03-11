@@ -303,40 +303,51 @@
     "monthly": "Mensual",
     "annual": "Anual",
     "savePercent": "Ahorra 40%",
-    "free": {
-      "name": "Gratis",
+    "explorer": {
+      "name": "Explorer",
       "price": "$0",
       "period": "para siempre",
       "description": "Perfecto para principiantes que inician su viaje en el trading.",
       "cta": "Comenzar Gratis",
       "features": [
-        "Acceso a todos los cursos básicos",
-        "Fundamentos del trading",
-        "Básicos de forex y acciones",
+        "Módulos 1–4 del Curso para Principiantes",
+        "Fundamentos del trading y forex",
+        "Cuestionarios interactivos",
         "Acceso a la comunidad",
-        "Acceso a reseñas de brokers",
+        "Reseñas de brokers",
         "Consulta de recuperación de fondos"
       ]
     },
-    "premium": {
-      "name": "Premium",
-      "price": "$29",
-      "priceAnnual": "$17",
+    "trader": {
+      "name": "Trader",
+      "price": "$59",
       "period": "por mes",
-      "description": "Para traders serios que quieren educación completa y certificación.",
-      "cta": "Iniciar Prueba Premium",
+      "description": "Para traders en desarrollo listos para profundizar en la estrategia.",
+      "cta": "Comenzar Plan Trader",
+      "features": [
+        "Todo en Explorer",
+        "Módulos 5–8 del Curso para Principiantes",
+        "Análisis técnico y fundamental",
+        "Gestión de riesgos avanzada",
+        "Ejercicios y cuestionarios avanzados",
+        "Soporte prioritario de recuperación"
+      ]
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "$119",
+      "period": "por mes",
+      "description": "Acceso completo — todo lo que PipsPlus ofrece.",
+      "cta": "Ir a Professional",
       "badge": "Más Popular",
       "features": [
-        "Todo en Gratis",
-        "Estrategias de trading avanzadas",
-        "Análisis técnico y fundamental",
-        "Dominio de psicología del trading",
-        "Opciones y derivados",
-        "Cuestionarios interactivos",
-        "Entrega de certificado físico",
-        "Soporte prioritario de recuperación",
+        "Todo en Trader",
+        "Módulos 9–12 del Curso para Principiantes",
+        "Sesiones de psicología del trading",
         "Sesiones de coaching 1-a-1",
-        "Informes de análisis de mercado"
+        "Entrega de certificado físico",
+        "Informes de análisis de mercado",
+        "Comunidad profesional exclusiva"
       ]
     },
     "certificate": {

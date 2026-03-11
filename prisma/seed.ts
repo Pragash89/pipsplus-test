@@ -4,6 +4,7 @@ dotenv.config({ path: ".env.local" });
 import { PrismaClient } from "../src/generated/prisma";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
+import { beginnerCourse } from "./beginner-course-data";
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
@@ -41,7 +42,7 @@ async function main() {
       email: "admin@pipsplus.com",
       passwordHash: adminHash,
       role: "ADMIN",
-      subscription: "PREMIUM",
+      subscription: "PROFESSIONAL",
       isVerifiedTrader: true,
     },
   });
@@ -52,7 +53,7 @@ async function main() {
       email: "trader@pipsplus.com",
       passwordHash: traderHash,
       role: "TRADER",
-      subscription: "PREMIUM",
+      subscription: "PROFESSIONAL",
       country: "United Kingdom",
       isVerifiedTrader: true,
       bio: "Forex trader for 5 years. Passionate about technical analysis.",
@@ -560,238 +561,26 @@ async function main() {
 
   // ─── Courses ──────────────────────────────────────────────────────────────
   const coursesData = [
-    {
-      slug: "trading-basics-complete-guide",
-      title: "Trading Basics: Complete Beginner's Guide",
-      titleAr: "أساسيات التداول: الدليل الشامل للمبتدئين",
-      titleEs: "Fundamentos del Trading: Guía Completa para Principiantes",
-      titleFr: "Bases du Trading: Guide Complet pour Débutants",
-      description:
-        "Master the fundamentals of trading in this comprehensive beginner's course. Learn what financial markets are, how they work, key terminology, and how to start trading safely. No prior knowledge required.",
-      category: "BASICS" as const,
-      level: "BEGINNER" as const,
-      isPremium: false,
-      isPublished: true,
-      totalDuration: 300,
-      totalLessons: 12,
-      instructor: "Sarah Mitchell, CFA",
-      tags: ["beginner", "fundamentals", "markets", "trading basics"],
-      sortOrder: 1,
-      modules: [
-        {
-          title: "Introduction to Financial Markets",
-          lessons: [
-            { title: "What Are Financial Markets?", type: "TEXT" as const, duration: 15, isFree: true, content: "Financial markets are platforms where buyers and sellers trade financial assets like stocks, bonds, currencies, and commodities. They play a crucial role in the global economy by facilitating capital allocation, price discovery, and risk management.\n\n## Types of Financial Markets\n\n**Stock Markets** – Where shares of publicly listed companies are bought and sold. Examples: NYSE, NASDAQ, LSE.\n\n**Forex Markets** – The largest financial market in the world where currencies are exchanged. $7.5 trillion daily trading volume.\n\n**Bond Markets** – Where government and corporate debt securities are traded.\n\n**Commodity Markets** – Where raw materials like gold, oil, and agricultural products are traded.\n\n**Cryptocurrency Markets** – Where digital currencies like Bitcoin and Ethereum are traded 24/7.\n\n## Why Markets Matter\n\nFinancial markets allow companies to raise capital, help investors grow wealth, enable price discovery, and facilitate international trade." },
-            { title: "How Trading Works", type: "TEXT" as const, duration: 20, isFree: true, content: "Trading is the act of buying and selling financial instruments with the goal of generating profit from price movements.\n\n## The Trading Process\n\n1. **Open an Account** – Choose a regulated broker and complete KYC verification\n2. **Deposit Funds** – Fund your trading account\n3. **Analyze the Market** – Use technical or fundamental analysis\n4. **Place a Trade** – Buy or sell at market or limit price\n5. **Manage Your Position** – Set stop-loss and take-profit levels\n6. **Close the Trade** – Exit when your target is reached or stop-loss is hit\n\n## Key Concepts\n\n**Long Position** – Buying an asset expecting the price to rise\n**Short Position** – Selling an asset expecting the price to fall\n**Leverage** – Using borrowed capital to increase potential returns (and losses)\n**Margin** – The collateral required to open a leveraged position" },
-            { title: "Market Participants", type: "TEXT" as const, duration: 15, isFree: false, content: "Understanding who participates in financial markets helps you understand price movements and market dynamics.\n\n## Major Market Participants\n\n**Retail Traders** – Individual investors like you and me\n**Institutional Investors** – Banks, hedge funds, pension funds\n**Central Banks** – Control monetary policy and currency values\n**Market Makers** – Provide liquidity by quoting bid/ask prices\n**High-Frequency Traders** – Use algorithms for ultra-fast trading" },
-          ],
-        },
-        {
-          title: "Trading Terminology",
-          lessons: [
-            { title: "Essential Trading Terms A-Z", type: "TEXT" as const, duration: 25, isFree: false, content: "Master the language of trading with this comprehensive glossary.\n\n**Ask Price** – The lowest price a seller will accept\n**Bid Price** – The highest price a buyer will pay\n**Spread** – The difference between bid and ask price\n**Pip** – Smallest unit of price movement in forex (0.0001)\n**Lot** – Standard unit of trading volume\n**Leverage** – Ratio of position size to margin (e.g. 1:100)\n**Margin** – Deposit required to open a leveraged trade\n**Stop Loss** – Order to close a trade at a specified loss level\n**Take Profit** – Order to close a trade at a specified profit level\n**Drawdown** – Reduction in account value from peak to trough" },
-            { title: "Quiz: Trading Basics", type: "QUIZ" as const, duration: 10, isFree: false, content: null },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "forex-trading-masterclass",
-      title: "Forex Trading Masterclass",
-      titleAr: "دورة تداول الفوركس الشاملة",
-      titleEs: "Masterclass de Trading Forex",
-      titleFr: "Masterclass de Trading Forex",
-      description:
-        "Dive deep into the world's largest financial market. Learn currency pairs, how the forex market works, reading quotes, fundamental and technical factors affecting exchange rates, and practical trading strategies.",
-      category: "FOREX" as const,
-      level: "BEGINNER" as const,
-      isPremium: false,
-      isPublished: true,
-      totalDuration: 480,
-      totalLessons: 18,
-      instructor: "James Okafor",
-      tags: ["forex", "currency trading", "currency pairs", "pips", "lots"],
-      sortOrder: 2,
-      modules: [
-        {
-          title: "Forex Market Fundamentals",
-          lessons: [
-            { title: "What is the Forex Market?", type: "TEXT" as const, duration: 20, isFree: true, content: "The foreign exchange market (forex/FX) is the world's largest and most liquid financial market with over $7.5 trillion traded daily — more than all stock markets combined.\n\n## How Forex Works\n\nUnlike stocks, forex has no central exchange. Trading happens over-the-counter (OTC) between banks, institutions, and retail traders through electronic networks.\n\n## The Major Sessions\n\n- **Sydney Session** – 10 PM – 7 AM GMT\n- **Tokyo Session** – 12 AM – 9 AM GMT\n- **London Session** – 8 AM – 5 PM GMT (most liquid)\n- **New York Session** – 1 PM – 10 PM GMT\n\n## Why Trade Forex?\n\n✅ 24/5 market access\n✅ Highest liquidity\n✅ Low transaction costs\n✅ Ability to go long or short\n✅ High leverage available" },
-            { title: "Currency Pairs Explained", type: "TEXT" as const, duration: 25, isFree: true, content: "In forex, currencies are always traded in pairs. The first currency is the base, the second is the quote.\n\n## Major Pairs\nEUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, NZD/USD\n\n## Minor Pairs (Cross Pairs)\nEUR/GBP, EUR/JPY, GBP/JPY — pairs that don't include USD\n\n## Exotic Pairs\nUSD/TRY, EUR/ZAR — one major + one emerging market currency\n\n## Reading a Quote\nEUR/USD = 1.0850 means 1 Euro = 1.0850 US Dollars\n\n**Bid/Ask**: Bid 1.0848 / Ask 1.0852 → Spread = 0.4 pips" },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "technical-analysis-mastery",
-      title: "Technical Analysis Mastery",
-      titleAr: "إتقان التحليل التقني",
-      titleEs: "Dominio del Análisis Técnico",
-      titleFr: "Maîtrise de l'Analyse Technique",
-      description:
-        "Learn to read price charts and identify profitable trading opportunities using technical analysis. Master candlestick patterns, support & resistance, trend lines, and popular indicators like RSI, MACD, and Bollinger Bands.",
-      category: "TECHNICAL_ANALYSIS" as const,
-      level: "INTERMEDIATE" as const,
-      isPremium: false,
-      isPublished: true,
-      totalDuration: 600,
-      totalLessons: 22,
-      instructor: "Sarah Mitchell, CFA",
-      tags: ["technical analysis", "chart patterns", "indicators", "candlesticks", "RSI", "MACD"],
-      sortOrder: 3,
-      modules: [
-        {
-          title: "Candlestick Patterns",
-          lessons: [
-            { title: "Reading Candlestick Charts", type: "TEXT" as const, duration: 30, isFree: true, content: "Candlestick charts originated in Japan in the 18th century and are the most popular chart type among traders.\n\n## Anatomy of a Candlestick\n\nEach candle represents a time period and shows:\n- **Open** – Price at start of period\n- **Close** – Price at end of period\n- **High** – Highest price reached\n- **Low** – Lowest price reached\n\n**Bullish Candle (Green/White)** – Close > Open\n**Bearish Candle (Red/Black)** – Close < Open\n\n## Key Patterns\n\n**Doji** – Open ≈ Close → indecision\n**Hammer** – Long lower wick → potential reversal up\n**Shooting Star** – Long upper wick → potential reversal down\n**Engulfing** – Large candle engulfs previous → strong reversal signal" },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "risk-management-fundamentals",
-      title: "Risk Management: Protect Your Capital",
-      titleAr: "إدارة المخاطر: حماية رأس مالك",
-      titleEs: "Gestión de Riesgos: Protege tu Capital",
-      titleFr: "Gestion des Risques: Protégez Votre Capital",
-      description:
-        "The most critical skill in trading. Learn position sizing, risk-reward ratios, stop-loss placement, portfolio diversification, and the psychological aspects of risk management to protect and grow your trading account.",
-      category: "RISK_MANAGEMENT" as const,
-      level: "BEGINNER" as const,
-      isPremium: false,
-      isPublished: true,
-      totalDuration: 360,
-      totalLessons: 14,
-      instructor: "David Okafor",
-      tags: ["risk management", "position sizing", "stop loss", "risk/reward", "money management"],
-      sortOrder: 4,
-      modules: [
-        {
-          title: "Core Risk Principles",
-          lessons: [
-            { title: "The 1% Rule — Never Risk More", type: "TEXT" as const, duration: 20, isFree: true, content: "The single most important rule in trading: never risk more than 1-2% of your account on any single trade.\n\n## Why the 1% Rule Saves Accounts\n\nIf you have a $10,000 account:\n- 1% risk per trade = $100 maximum loss\n- Even 20 consecutive losing trades only costs $2,000 (20% drawdown)\n- Your account survives to fight another day\n\n## Position Sizing Formula\n\n**Position Size = (Account × Risk%) ÷ Stop Loss in $**\n\nExample:\n- Account: $10,000\n- Risk: 1% = $100\n- Stop Loss: 50 pips = $5 per pip\n- Position Size: $100 ÷ $5 = 20,000 units (0.2 lots)\n\n## Risk/Reward Ratio\n\nAlways aim for minimum 1:2 risk/reward.\nIf you risk $100, target at least $200 profit." },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "crypto-trading-complete-course",
-      title: "Cryptocurrency Trading Complete Course",
-      titleAr: "دورة تداول العملات الرقمية الشاملة",
-      titleEs: "Curso Completo de Trading de Criptomonedas",
-      titleFr: "Cours Complet de Trading de Cryptomonnaies",
-      description:
-        "Comprehensive guide to cryptocurrency trading from Bitcoin basics to advanced DeFi strategies. Understand blockchain technology, major cryptocurrencies, exchanges, wallets, and how to trade crypto safely.",
-      category: "CRYPTO" as const,
-      level: "BEGINNER" as const,
-      isPremium: false,
-      isPublished: true,
-      totalDuration: 420,
-      totalLessons: 16,
-      instructor: "Priya Sharma",
-      tags: ["cryptocurrency", "bitcoin", "ethereum", "DeFi", "blockchain", "crypto trading"],
-      sortOrder: 5,
-      modules: [
-        {
-          title: "Crypto Fundamentals",
-          lessons: [
-            { title: "What is Cryptocurrency?", type: "TEXT" as const, duration: 20, isFree: true, content: "Cryptocurrency is a digital or virtual currency secured by cryptography, making it nearly impossible to counterfeit.\n\n## Key Characteristics\n\n- **Decentralised** – No central authority controls it\n- **Transparent** – All transactions on public blockchain\n- **Secure** – Protected by cryptographic algorithms\n- **Borderless** – Send anywhere in the world instantly\n- **24/7 Markets** – Trade any time, any day\n\n## Top Cryptocurrencies by Market Cap\n\n1. **Bitcoin (BTC)** – Digital gold, store of value\n2. **Ethereum (ETH)** – Smart contracts platform\n3. **BNB** – Binance ecosystem token\n4. **XRP** – Cross-border payments\n5. **USDT** – Stablecoin pegged to USD" },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "advanced-options-trading",
-      title: "Advanced Options Trading Strategies",
-      titleAr: "استراتيجيات تداول الخيارات المتقدمة",
-      titleEs: "Estrategias Avanzadas de Trading de Opciones",
-      titleFr: "Stratégies Avancées de Trading d'Options",
-      description:
-        "Master options trading with proven strategies for income generation, hedging, and speculation. Learn calls, puts, spreads, straddles, and the Greeks (Delta, Gamma, Theta, Vega) for professional options trading.",
-      category: "OPTIONS" as const,
-      level: "ADVANCED" as const,
-      isPremium: true,
-      isPublished: true,
-      totalDuration: 720,
-      totalLessons: 28,
-      instructor: "Sarah Mitchell, CFA",
-      tags: ["options", "derivatives", "calls", "puts", "spreads", "the greeks", "advanced"],
-      sortOrder: 6,
-      modules: [
-        {
-          title: "Options Fundamentals",
-          lessons: [
-            { title: "What Are Options?", type: "TEXT" as const, duration: 25, isFree: true, content: "An option is a contract that gives the buyer the RIGHT, but not the OBLIGATION, to buy or sell an underlying asset at a specified price (strike price) on or before a specific date (expiration).\n\n## Types of Options\n\n**Call Option** – Right to BUY at strike price\n**Put Option** – Right to SELL at strike price\n\n## Key Terms\n\n- **Strike Price** – The agreed-upon transaction price\n- **Premium** – Cost of buying the option\n- **Expiration Date** – When the contract expires\n- **In The Money (ITM)** – Option has intrinsic value\n- **Out of The Money (OTM)** – Option has no intrinsic value\n\n## Why Trade Options?\n\n✅ Lower capital requirement than owning shares\n✅ Defined risk for buyers (max loss = premium paid)\n✅ Leverage and flexibility\n✅ Income generation through selling options" },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "trading-psychology-mastery",
-      title: "Trading Psychology: Master Your Mind",
-      titleAr: "علم نفس التداول: اتقن عقلك",
-      titleEs: "Psicología del Trading: Domina tu Mente",
-      titleFr: "Psychologie du Trading: Maîtrisez Votre Esprit",
-      description:
-        "90% of trading success is mental. This premium course teaches you to control emotions, overcome fear and greed, develop a winning mindset, and build the discipline needed for consistent profitability.",
-      category: "PSYCHOLOGY" as const,
-      level: "INTERMEDIATE" as const,
-      isPremium: true,
-      isPublished: true,
-      totalDuration: 480,
-      totalLessons: 18,
-      instructor: "Dr. Emma Williams",
-      tags: ["psychology", "mindset", "discipline", "emotions", "fear", "greed", "trading mindset"],
-      sortOrder: 7,
-      modules: [
-        {
-          title: "The Trader's Mind",
-          lessons: [
-            { title: "Why 80% of Traders Lose Money", type: "TEXT" as const, duration: 25, isFree: true, content: "Studies show that approximately 70-80% of retail traders lose money over time. The reasons are rarely lack of strategy — they're psychological.\n\n## The Real Reasons Traders Fail\n\n**1. Overtrading** – Taking too many trades out of boredom or excitement\n**2. Revenge Trading** – Trying to 'win back' losses with bigger positions\n**3. Fear of Missing Out (FOMO)** – Entering trades late chasing price\n**4. Moving Stop Losses** – Letting losing trades run, hoping for reversal\n**5. Taking Profits Too Early** – Fear making you close winners prematurely\n**6. Position Sizing Errors** – Risking too much on any single trade\n**7. No Trading Plan** – Trading on impulse rather than rules\n\n## The Solution\n\nSuccess in trading comes from:\n✅ A clearly defined trading plan\n✅ Strict risk management rules\n✅ Emotional discipline and self-awareness\n✅ Consistent execution regardless of outcome" },
-          ],
-        },
-      ],
-    },
-    {
-      slug: "stock-market-investing",
-      title: "Stock Market Investing for Beginners",
-      titleAr: "الاستثمار في سوق الأسهم للمبتدئين",
-      titleEs: "Inversión en Bolsa para Principiantes",
-      titleFr: "Investissement en Bourse pour Débutants",
-      description:
-        "Learn how to invest in the stock market with confidence. Covers stock valuation, portfolio construction, dividend investing, growth investing, ETFs, and building long-term wealth through equities.",
-      category: "STOCKS" as const,
-      level: "BEGINNER" as const,
-      isPremium: false,
-      isPublished: true,
-      totalDuration: 360,
-      totalLessons: 14,
-      instructor: "James Okafor",
-      tags: ["stocks", "investing", "equities", "dividends", "portfolio", "ETFs", "long-term investing"],
-      sortOrder: 8,
-      modules: [
-        {
-          title: "Stock Market Basics",
-          lessons: [
-            { title: "How the Stock Market Works", type: "TEXT" as const, duration: 20, isFree: true, content: "The stock market is a marketplace where buyers and sellers trade shares of publicly listed companies.\n\n## Key Stock Exchanges\n\n- **NYSE** – New York Stock Exchange (US)\n- **NASDAQ** – Technology-focused US exchange\n- **LSE** – London Stock Exchange (UK)\n- **TSE** – Tokyo Stock Exchange (Japan)\n- **SSE** – Shanghai Stock Exchange (China)\n\n## How Stocks Generate Returns\n\n**Capital Appreciation** – Stock price increases over time\n**Dividends** – Regular cash payments from company profits\n\n## Stock Market Indices\n\n**S&P 500** – 500 largest US companies\n**DJIA** – 30 major US blue-chip companies\n**FTSE 100** – 100 largest UK companies\n**Nikkei 225** – 225 major Japanese companies" },
-          ],
-        },
-      ],
-    },
+    beginnerCourse,
   ];
 
   for (const courseData of coursesData) {
-    const { modules, ...courseFields } = courseData;
+    const { modules, ...courseFields } = courseData as any;
     const course = await prisma.course.create({ data: courseFields });
 
     for (let mi = 0; mi < modules.length; mi++) {
-      const { lessons, ...moduleFields } = modules[mi];
+      const { lessons, planAccess, ...moduleFields } = modules[mi];
       const mod = await prisma.module.create({
-        data: { ...moduleFields, courseId: course.id, sortOrder: mi },
+        data: {
+          ...moduleFields,
+          courseId: course.id,
+          sortOrder: mi,
+          ...(planAccess ? { planAccess } : {}),
+        },
       });
 
       for (let li = 0; li < lessons.length; li++) {
-        const { content, ...lessonFields } = lessons[li];
+        const { content, quizQuestions, ...lessonFields } = lessons[li];
         const lesson = await prisma.lesson.create({
           data: {
             ...lessonFields,
@@ -806,49 +595,21 @@ async function main() {
           const quiz = await prisma.quiz.create({
             data: { lessonId: lesson.id, passMark: 70 },
           });
-          await prisma.quizQuestion.createMany({
-            data: [
-              {
-                quizId: quiz.id,
-                question: "What is the primary purpose of financial markets?",
-                options: JSON.stringify([
-                  { id: "a", text: "To facilitate capital allocation and price discovery" },
-                  { id: "b", text: "To generate government revenue" },
-                  { id: "c", text: "To provide employment" },
-                  { id: "d", text: "To control inflation" },
-                ]),
-                correctOption: "a",
-                explanation: "Financial markets facilitate capital allocation, price discovery, and risk management.",
-                sortOrder: 0,
-              },
-              {
-                quizId: quiz.id,
-                question: "What does 'going long' mean in trading?",
-                options: JSON.stringify([
-                  { id: "a", text: "Holding a trade for a long time" },
-                  { id: "b", text: "Buying an asset expecting the price to rise" },
-                  { id: "c", text: "Selling an asset expecting the price to fall" },
-                  { id: "d", text: "Trading with high leverage" },
-                ]),
-                correctOption: "b",
-                explanation: "Going long means buying an asset with the expectation that its price will increase.",
-                sortOrder: 1,
-              },
-              {
-                quizId: quiz.id,
-                question: "What is a 'spread' in trading?",
-                options: JSON.stringify([
-                  { id: "a", text: "The daily price range" },
-                  { id: "b", text: "The broker's commission fee" },
-                  { id: "c", text: "The difference between bid and ask price" },
-                  { id: "d", text: "The leverage ratio" },
-                ]),
-                correctOption: "c",
-                explanation: "The spread is the difference between the bid (buy) price and the ask (sell) price.",
-                sortOrder: 2,
-              },
-            ],
-          });
+
+          if (quizQuestions && quizQuestions.length > 0) {
+            await prisma.quizQuestion.createMany({
+              data: quizQuestions.map(
+                (q: { question: string; options: { id: string; text: string }[]; correctOption: string; explanation: string }, qi: number) => ({
+                  quizId: quiz.id,
+                  question: q.question,
+                  options: JSON.stringify(q.options),
+                  correctOption: q.correctOption,
+                  explanation: q.explanation,
+                  sortOrder: qi,
+                })
+              ),
+            });
+          }
         }
       }
     }
@@ -920,7 +681,7 @@ async function main() {
 
   // ─── Demo Enrollment ──────────────────────────────────────────────────────
   const firstCourse = await prisma.course.findFirst({
-    where: { slug: "trading-basics-complete-guide" },
+    where: { slug: "beginner-trader-foundation" },
   });
   if (firstCourse) {
     await prisma.enrollment.create({
